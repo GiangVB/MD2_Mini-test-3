@@ -60,4 +60,13 @@ public class Meat extends Material implements Discount {
         }
         return realMoney;
     }
+
+    @Override
+    public String toString() {
+        return "Mã nguyên liệu: " + getId() +
+                ", Tên nguyên liệu: " + getName() +
+                ", Ngày SX: " + getManufacturingDate() +
+                ", Giá thành: " + cost +
+                ", Khối lượng: " + weight;
+    }
 }
