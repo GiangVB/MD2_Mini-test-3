@@ -39,6 +39,7 @@ public class MaterialManagement {
                 case 4:
                     System.out.println("Danh sách nguyên liệu");
                     showAllMaterial();
+                    break;
                 case 0:
                     System.exit(0);
                 default:

@@ -10,7 +10,7 @@ public class MaterialFile {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
-            fos = new FileOutputStream("list.dat");
+            fos = new FileOutputStream("list1.dat");
             oos = new ObjectOutputStream(fos);
             oos.writeObject(materials);
         } catch (FileNotFoundException e) {
@@ -25,7 +25,7 @@ public class MaterialFile {
     }
 
     public static LinkedList<Material> readFile() {
-        File file = new File("list.dat");
+        File file = new File("list1.dat");
         try {
             FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
