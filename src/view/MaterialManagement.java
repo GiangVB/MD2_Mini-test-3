@@ -1,6 +1,6 @@
 package view;
 
-import controller.Method;
+import controller.MaterialManager;
 import model.CrispyFlour;
 import model.Material;
 import model.Meat;
@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class MaterialManagement {
     public static LinkedList<Material> materials;
 
-    public static void main(String[] args) {
+    /* public static void main(String[] args) {
         materials = new LinkedList<>();
         materials.add(new CrispyFlour("CF1","Bột chiên phồng", LocalDate.now(), 1000, 100));
         materials.add(new CrispyFlour("CF2", "Bột chiên xù", LocalDate.now(), 950, 150));
@@ -32,13 +32,13 @@ public class MaterialManagement {
             switch (choice) {
                 case 1:
                     Material newMaterial = creatNewMaterial();
-                    materials = Method.addNewMaterial(materials,newMaterial);
+                    materials = MaterialManager.addNewMaterial(materials,newMaterial);
                     break;
                 case 2:
                     System.out.println("Nhập mã nguyên liệu muốn xóa: ");
                     String deleteID = input.nextLine();
                     int deleteIndex = findMaterialIndexByID(deleteID);
-                    Method.removeMaterial(materials, deleteIndex);
+                    MaterialManager.removeMaterial(materials, deleteIndex);
                     break;
                 case 3:
                     System.out.println("Nhập mã nguyên liệu muốn sửa: ");
@@ -46,15 +46,15 @@ public class MaterialManagement {
                     String e = input.nextLine();
                     Material editedMaterial = creatNewMaterial();
                     int editIndex = findMaterialIndexByID(editID);
-                    Method.replaceMaterial(materials, editIndex, editedMaterial);
+                    MaterialManager.replaceMaterial(materials, editIndex, editedMaterial);
                     break;
                 default:
                     System.out.println("No choice!");
             }
         }
-    }
+    }*/
 
-    public static Material creatNewMaterial() {
+    /*public static Material creatNewMaterial() {
         Scanner input = new Scanner(System.in);
         int choice = -1;
         Material newMaterial = null;
@@ -103,9 +103,9 @@ public class MaterialManagement {
                 newMaterial = newMeat;
         }
         return newMaterial;
-    }
+    }*/
 
-    public static int findMaterialIndexByID(String SearchID) {
+    /*public static int findMaterialIndexByID(String SearchID) {
         int index = -1;
         for (int i = 0; i < materials.size(); i++) {
             Material currentMaterial = materials.get(i);
@@ -116,5 +116,5 @@ public class MaterialManagement {
             }
         }
         return index;
-    }
+    }*/
 }

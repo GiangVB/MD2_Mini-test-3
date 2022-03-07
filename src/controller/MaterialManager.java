@@ -4,7 +4,7 @@ import model.Material;
 
 import java.util.LinkedList;
 
-public class Method {
+public class MaterialManager {
     public static LinkedList<Material> addNewMaterial (LinkedList<Material> materials, Material newMaterial) {
         materials.add(newMaterial);
         return materials;
