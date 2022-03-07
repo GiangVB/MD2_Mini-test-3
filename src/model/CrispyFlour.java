@@ -33,6 +33,7 @@ public class CrispyFlour extends Material implements Discount {
 
     @Override
     public double getAmount() {
+        int cost = getCost();
         int amount = quantity * cost;
         return amount;
     }
@@ -46,17 +47,21 @@ public class CrispyFlour extends Material implements Discount {
 
     @Override
     public double getRealMoney() {
-        LocalDate todayDate = LocalDate.now();
-        int todayMonth = todayDate.getMonthValue();
+        LocalDate today = LocalDate.now();
         LocalDate expiryDate = getExpiryDate();
-        int expiryDateMonth = expiryDate.getMonthValue();
+        LocalDate firstDiscountMarkDate = expiryDate.minusMonths(DISCOUNTMARK_1);
+        LocalDate secondDiscountMarkDate = expiryDate.minusMonths(DISCOUNTMARK_2);
         double amount = getAmount();
         double realMoney;
 
-        if (todayMonth + DISCOUNTMARK_1 >= expiryDateMonth) {
+        if (today.isBefore(getExpiryDate()) &&
+                (today.isAfter(firstDiscountMarkDate) ||
+                        today.isEqual(firstDiscountMarkDate))) {
             realMoney = amount * DISCOUNTRATEMARK_1;
         }
-        else if (todayMonth + DISCOUNTMARK_2 >= expiryDateMonth) {
+        else if (today.isBefore(firstDiscountMarkDate) &&
+                (today.isAfter(secondDiscountMarkDate) ||
+                        today.isEqual(secondDiscountMarkDate))) {
             realMoney = amount * DISCOUNTRATEMARK_2;
         }
         else {
