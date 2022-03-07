@@ -69,6 +69,4 @@ public class CrispyFlour extends Material implements Discount {
         }
         return realMoney;
     }
-
-
 }

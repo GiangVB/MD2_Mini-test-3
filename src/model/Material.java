@@ -54,4 +54,12 @@ public abstract class Material implements Discount, Serializable {
     public abstract double getAmount();
 
     public abstract LocalDate getExpiryDate();
+
+    @Override
+    public String toString() {
+        return "Mã nguyên liệu: " + id + '\'' +
+                ", Tên nguyên liệu: " + name + '\'' +
+                ", Ngày SX: " + manufacturingDate +
+                ", Giá thành:" + cost;
+    }
 }
