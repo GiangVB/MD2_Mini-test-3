@@ -28,7 +28,7 @@ public class MaterialFromFileBinary implements IMaterialData{
     }
 
     @Override
-    public void writFile(LinkedList<Material> materials) throws IOException {
+    public void writeFile(LinkedList<Material> materials) throws IOException {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {

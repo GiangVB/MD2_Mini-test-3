@@ -60,4 +60,6 @@ public class Meat extends Material implements Discount {
         }
         return realMoney;
     }
+
+
 }

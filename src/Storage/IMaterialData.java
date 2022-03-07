@@ -7,5 +7,5 @@ import java.util.LinkedList;
 
 public interface IMaterialData {
     LinkedList<Material> readFile();
-    void writFile (LinkedList<Material> materials) throws IOException;
+    void writeFile(LinkedList<Material> materials) throws IOException;
 }
