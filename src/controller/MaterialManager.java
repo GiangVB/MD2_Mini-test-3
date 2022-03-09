@@ -1,7 +1,7 @@
 package controller;
 
-import Storage.IMaterialData;
-import Storage.MaterialFromFileBinary;
+import storage.IMaterialData;
+import storage.MaterialFromFileBinary;
 import model.Material;
 
 import java.io.IOException;
